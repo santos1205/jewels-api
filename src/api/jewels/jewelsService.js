@@ -38,9 +38,26 @@ Jewels.route('loadTotalJewels', (req, res, next) => {
     //     }},
     //     {$project: {_id:0}}
     // ])
-    let resultTotals = { totalJewels: 800 }
-    res.json({resultTotals})
-})
+
+
+
+
+    Jewels.aggregate([
+    {$match: {_id: ObjectId(req)} }, 
+    {$unwind: '$jewels'},     	
+    {$group: {
+        _id: null, 
+        "total": {$sum: 1 }
+    }},
+    {$project: {_id:0}},
+    (error, value) => {
+        if(error){
+            res.status(500).json({errors: [error]})
+        }else{
+            res.json({value})
+        }
+    }]
+)
 
 
 module.exports = Jewels
