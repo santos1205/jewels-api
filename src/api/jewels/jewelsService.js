@@ -43,7 +43,7 @@ Jewels.route('loadTotalJewels', (req, res, next) => {
     //res.json({resultTotals})
 
     Jewels.aggregate([
-        {$match: {_id: ObjectId(req)} }, 
+        {$match: {_id: ObjectId('5c02ee620bc2f60016a33ca2')} }, 
         {$unwind: '$jewels'},     	
         {$group: {
             _id: null, 
