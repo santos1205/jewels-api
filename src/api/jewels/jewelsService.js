@@ -29,15 +29,16 @@ Jewels.route('firstElem', (req, res, next) => {
 
 // api methods => loadTotals
 Jewels.route('loadTotalJewels', (req, res, next) => {
-    let resultTotals = Jewels.aggregate([
-        {$match: {_id: ObjectId(req)} }, 
-        {$unwind: '$jewels'},     	
-        {$group: {
-            _id: null, 
-            "total": {$sum: 1 }
-        }},
-        {$project: {_id:0}}
-    ])
+    // let resultTotals = Jewels.aggregate([
+    //     {$match: {_id: ObjectId(req)} }, 
+    //     {$unwind: '$jewels'},     	
+    //     {$group: {
+    //         _id: null, 
+    //         "total": {$sum: 1 }
+    //     }},
+    //     {$project: {_id:0}}
+    // ])
+    let resultTotals = { totalJewels: 800 }
     res.json({resultTotals})
 })
 
