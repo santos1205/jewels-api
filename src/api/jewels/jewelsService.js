@@ -42,7 +42,7 @@ Jewels.route('loadTotalJewels', (req, res, next) => {
     //let resultTotals = { totalJewels: 800 }
     //res.json({resultTotals})
     var userid = new ObjectID("5c02ee620bc2f60016a33ca2");
-    Jewels.aggregate([
+    Jewels.aggregate(
         {'$match': {'_id': userid} }, 
         {'$unwind': '$jewels'},     	
         {'$group': {
@@ -56,7 +56,7 @@ Jewels.route('loadTotalJewels', (req, res, next) => {
             }else{
                 res.json({value})
             }
-        }]
+        }
     )
 })
 
