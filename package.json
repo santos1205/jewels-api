@@ -1,0 +1,34 @@
+{
+  "name": "jewels-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "loader.js",
+  "scripts": {
+    "start": "node loader.js",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santos1205/jewels-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santos1205/jewels-api/issues"
+  },
+  "homepage": "https://github.com/santos1205/jewels-api#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": "^1.15.2",
+    "express-query-int": "^1.0.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.7.0",
+    "mongoose-paginate": "^5.0.3",
+    "node-restful": "^0.2.5",
+    "pm2": "^2.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
