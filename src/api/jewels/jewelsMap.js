@@ -12,6 +12,7 @@ const jewelSchema = new mongoose.Schema({
 const kitJewelsSchema = new mongoose.Schema({
     cod: {type: String, required: true},
     client: {type: String, required: true},
+    filter: {type: String, required: false},
     partialJewels: {type: Number, min: 0, required: [true, 'Informe a qtde parcial das jóias.']},
     totalJewels: {type: Number, min: 0, required: [true, 'Informe a qtde total das jóias.']},
     partialSell: {type: Number, min: 0, required: [true, 'Informe o valor parcial das vendas.']},
